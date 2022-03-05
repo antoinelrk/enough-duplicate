@@ -41,7 +41,9 @@ for root, directories, files in os.walk(replaced, topdown=False):
 
 print('[=============================================]')
 print('Fichiers trouvés: ' + str(len(_checksums)))
-print('Doublons:')
-for entry in _doublons:
-    print(entry)
+if len(_doublons) == 0:
+    print('Aucun doublon')
+else:
+    for entry in _doublons:
+        print(entry)
 print('[=============================================]')
